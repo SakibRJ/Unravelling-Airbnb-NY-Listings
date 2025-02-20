@@ -81,6 +81,7 @@ AFTER:
 
 Price Distribution of rooms analysed with histogram.
 ![Image](https://github.com/user-attachments/assets/f49fdb74-d6af-4527-962f-8b5e4045fe3d)
+
 #The data is right skewed where majority of the listing are priced between 0-500 USD
 
 #### Availability distribution
