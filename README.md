@@ -86,6 +86,7 @@ Price Distribution of rooms analysed with histogram.
 
 #### Availability distribution
 ![Image](https://github.com/user-attachments/assets/87762f6a-53b9-4760-8ca7-bfbe691278cf)
+
 #The distribution is bimodal, with major peaks at 0 and 365.The spikes at round numbers (90, 160) could indicate hosts setting availability in structured time blocks.
 
 #### Visualized the count listings per neighborhood using bar plots:
