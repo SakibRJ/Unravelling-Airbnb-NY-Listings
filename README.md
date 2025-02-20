@@ -1,4 +1,5 @@
-# Unravelling Airbnb-NY Listings: A Python Based EDA Approach
+# Navigating Call Volume Trends: Uncovering Patterns & Progression
+
 
 ## Project Description
 This project applies Python-based Exploratory Data Analysis (EDA) to examine Airbnb listings in New York, leveraging libraries such as Pandas, Numpy, Seaborn, and Matplotlib. The objective is to uncover key insights into pricing trends, location dynamics, property types, and customer ratings, helping both hosts and stakeholders make informed, data-driven decisions. The analysis includes data cleaning, handling missing values, summary statistics, and correlation analysis, followed by visualizations using histograms, scatter plots, bar charts etc. Additionally, it explores room type distribution, availability patterns, outlier detection, and advanced filtering to refine insights.
@@ -49,7 +50,6 @@ Fix data types: Converted last_review to a datetime object.
 Remove outliers: Listings with prices > $2,000 were capped to avoid skewed visualizations.
 
 BEFORE:
-
 ![Image](https://github.com/user-attachments/assets/9334c980-33f2-4918-b41e-91fdcda98b49)
 
 AFTER:
@@ -60,7 +60,7 @@ AFTER:
 ![Image](https://github.com/user-attachments/assets/f9bb6bd2-3734-4877-88c2-0418db4cfdc3)
 
 2. ### EDA (Exploratory Data Analysis)
-Checking the price distribution; Exploration of price across the dataset:
+#### Checking the price distribution; Exploration of price across the dataset:
 
     plt.figure(figsize=(10, 7))
     sns.lineplot(data=df, x='neighbourhood_group', y='price', hue='room_type')
@@ -75,28 +75,50 @@ Checking the price distribution; Exploration of price across the dataset:
 
 #Almost all room-types bags the most expensive spots in 'Manhatta' of which hotel room having the most expensive listings where as 'Bronx' indicating the chepest listings in almost all kinds of room-types.
 
-Room type distribution:
-Price Distribution of rooms analysed with histogram.
-Availability distribution.
-Visualized the count listings per neighborhood using bar plots.
-Identified Entire home/apt as the most common room type.
+#### Room type distribution:
 
-Neighborhood group insights:
+Price Distribution of rooms analysed with histogram.
+![Image](https://github.com/user-attachments/assets/f49fdb74-d6af-4527-962f-8b5e4045fe3d)
+#The data is right skewed where majority of the listing are priced between 0-500 USD
+
+#### Availability distribution
+![Image](https://github.com/user-attachments/assets/87762f6a-53b9-4760-8ca7-bfbe691278cf)
+#The distribution is bimodal, with major peaks at 0 and 365.The spikes at round numbers (90, 160) could indicate hosts setting availability in structured time blocks.
+
+#### Visualized the count listings per neighborhood using bar plots:
+
+    viz = sns.barplot(data=df, x='neighbourhood_group', y='price', hue='room_type')
+    plt.title("Mean price/bed & Dependency on Neighbourhood")
+    plt.xlabel("Neighbourhood Group   fig(d)")
+    plt.ylabel("Avg Listing price")
+    for labels in viz.containers:
+        viz.bar_label(labels, fontsize=7, padding=3)
+    plt.show()
+
+![Image](https://github.com/user-attachments/assets/e9eaa533-78b6-49ca-99c0-7e45e60ac27c)
+
+
+#### Neighborhood group insights:
 
 Analyzed price variations by boroughs.
 Manhattan had the highest average prices.
 
-Availability trends:
+#### Availability trends:
+
 Used heatmaps to show correlations among price, availability_365, number_of_reviews, and beds.
-Price distribution:
+
+#### Price distribution:
 
 Used histograms to show the distribution of prices.
 Majority of the listings were priced between $50 - $300.
 Host listings:
 
-Analyzed hosts with multiple listings using boxplots to identify key contributors.
+#### Relationship of Price with Reviews:
+![Image](https://github.com/user-attachments/assets/32ed84cc-b1f9-468a-b86a-92671e2769b6)
+#The scatter chart "Relationship of Price with Reviews" shows an inverse relationship between price and the number of reviews i.e., higher-priced listings tend to receive fewer reviews. This suggests that expensive properties attract a smaller, more selective group of guests. 
 
-Review behavior:
+#### Review behavior:
+
 Used pair plots to show relationships between number of reviews, price, and availability.
 
 3. ### Data Visualization
@@ -119,12 +141,10 @@ Few listings priced at $10,000+ were detected, indicating the need to filter suc
 Availability Patterns:
 Listings with high availability tend to have lower prices and more reviews, likely due to better guest experience.
 
-Host Behavior:
-Some hosts manage multiple listings, indicating a trend toward professional hosting.
 
 ### Conclusion/Insights:
 
-### The insights derived align with the business objectives, along with additional findings. For a comprehensive analysis and deeper understanding of the outcomes, please run 'MAIN_Airbnb_data_Analysis.ipynb'. This README serves only as a high-level overview of the project.
+#### The insights derived align with the business objectives, along with additional findings. For a comprehensive analysis and deeper understanding of the outcomes, please run 'MAIN_Airbnb_data_Analysis.ipynb'. This README serves only as a high-level overview of the project.
 
 - Price distribution across NYC shows that Manhattan has the most expensive Airbnb listings across all room types, while the Bronx offers the cheapest options.
 
