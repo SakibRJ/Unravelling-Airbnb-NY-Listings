@@ -116,6 +116,13 @@ Majority of the listings were priced between $50 - $300.
 Host listings:
 
 #### Relationship of Price with Reviews:
+
+    plt.figure(figsize=(7,5))
+    sns.scatterplot(data=df, x='price', y='number_of_reviews')
+    plt.title("Relationship of Price with Reviews")
+    plt.xlabel("price   fig(e)")
+    plt.show()
+
 ![Image](https://github.com/user-attachments/assets/32ed84cc-b1f9-468a-b86a-92671e2769b6)
 #The scatter chart "Relationship of Price with Reviews" shows an inverse relationship between price and the number of reviews i.e., higher-priced listings tend to receive fewer reviews. This suggests that expensive properties attract a smaller, more selective group of guests. 
 
