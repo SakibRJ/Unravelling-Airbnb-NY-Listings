@@ -91,6 +91,24 @@ Price Distribution of rooms analysed with histogram.
 
 #### Visualized the count listings per neighborhood using bar plots:
 
+    viz = sns.countplot(data=df, x='neighbourhood_group', hue='room_type')
+    plt.title("Count of Listings per Neighbourhood_group")
+    plt.xlabel("Neighbourhood   fig(h)")
+    plt.ylabel("Count of Listings")
+    for lables in viz.containers:
+        viz.bar_label(lables, fontsize=7, padding=3)
+    plt.show()
+
+![Image](https://github.com/user-attachments/assets/2c28dd89-7085-434f-b705-ca3a630c02d4)
+
+#From the Geo Distribution and the listing count its observed that majority of listing in NYC are of Entire_home/apt and Private_rooms where as Shared_rooms are little to none in the neighbourhood. This gives a glimpse of the customer base of Airbnb in NYC which concentrates & revolves around Entire_home/apt and Private_rooms.
+
+#### Neighborhood group insights:
+
+Analyzed price variations by boroughs.
+Manhattan had the highest average prices.
+
+
     viz = sns.barplot(data=df, x='neighbourhood_group', y='price', hue='room_type')
     plt.title("Mean price/bed & Dependency on Neighbourhood")
     plt.xlabel("Neighbourhood Group   fig(d)")
@@ -100,12 +118,6 @@ Price Distribution of rooms analysed with histogram.
     plt.show()
 
 ![Image](https://github.com/user-attachments/assets/e9eaa533-78b6-49ca-99c0-7e45e60ac27c)
-
-
-#### Neighborhood group insights:
-
-Analyzed price variations by boroughs.
-Manhattan had the highest average prices.
 
 #### Availability trends:
 
