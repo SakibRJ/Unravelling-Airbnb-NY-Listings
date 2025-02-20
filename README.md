@@ -124,6 +124,7 @@ Host listings:
     plt.show()
 
 ![Image](https://github.com/user-attachments/assets/32ed84cc-b1f9-468a-b86a-92671e2769b6)
+
 #The scatter chart "Relationship of Price with Reviews" shows an inverse relationship between price and the number of reviews i.e., higher-priced listings tend to receive fewer reviews. This suggests that expensive properties attract a smaller, more selective group of guests. 
 
 #### Review behavior:
