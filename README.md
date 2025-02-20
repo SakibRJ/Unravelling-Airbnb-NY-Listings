@@ -16,7 +16,7 @@ By identifying patterns and correlations, this study provides strategic recommen
 - Any more insights that can add value into the characteristics of this report are welcome.
 
 
-### Dataset Overview:
+### Dataset Overview
 The dataset consists of 20,765 entries with 22 features, capturing key details about Airbnb listings, including:
 
 - ID & Host Information: Unique listing ID and host name.
@@ -50,7 +50,9 @@ Fix data types: Converted last_review to a datetime object.
 Remove outliers: Listings with prices > $2,000 were capped to avoid skewed visualizations.
 
 BEFORE:
+
 ![Image](https://github.com/user-attachments/assets/9334c980-33f2-4918-b41e-91fdcda98b49)
+
 
 AFTER:
 
